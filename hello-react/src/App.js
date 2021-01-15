@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Mycomponent from "./1.Mycomponent";
 import Counter from "./2.Counter";
+import Say from "./3.Say";
 // 모듈 불러오기(import)
 
 
@@ -19,7 +20,9 @@ const App = () => {
   // Invalid prop `name` of type `number` supplied to `Mycomponent`, expected `string`.
 
   // return <Mycomponent name="React" favoriteNumber={1}>리액트</Mycomponent>
-  return <Counter />
+  // return <Counter />
+
+  return <Say />
 };
 
 export default App;
