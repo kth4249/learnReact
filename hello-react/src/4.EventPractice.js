@@ -169,7 +169,7 @@ const EventPractice = () => {
             <input
                 type="text"
                 name="message"
-                placeholder="아무거나 입력해 주세요"
+                placeholder="아무거나 입력해 주세요."
                 value={message}
                 onChange={onChangeMessage}
                 onKeyPress={onKeyPress}
