@@ -3,6 +3,7 @@ import "./App.css";
 import Mycomponent from "./1.Mycomponent";
 import Counter from "./2.Counter";
 import Say from "./3.Say";
+import EventPractice from "./4.EventPractice";
 // 모듈 불러오기(import)
 
 
@@ -22,7 +23,10 @@ const App = () => {
   // return <Mycomponent name="React" favoriteNumber={1}>리액트</Mycomponent>
   // return <Counter />
 
-  return <Say />
+  // return <Say />
+
+  // 4.2.1 컴포넌트 생성 및 불러오기
+  return <EventPractice />
 };
 
 export default App;
