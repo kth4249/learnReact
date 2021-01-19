@@ -7,6 +7,7 @@ import EventPractice from "./4.EventPractice";
 import ValidationSample from "./5.ValidationSample";
 import ScrollBox from "./6.ScrollBox";
 import { Component } from "react";
+import IterationSample from "./7.IterationSample";
 // 모듈 불러오기(import)
 
 // const App = () => {
@@ -37,14 +38,17 @@ import { Component } from "react";
 
 class App extends Component {
   render() {
-    // 5.3.2.2 App 컴포넌트에서 스크롤 박스 컴포넌트 렌더링
     return (
-      <div>
-        <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
-        <button onClick={() => this.scrollBox.scrollToBottom()}>
-          맨 밑으로
-        </button>
-      </div>
+        // 5.3.2.2 App 컴포넌트에서 스크롤 박스 컴포넌트 렌더링
+      // <div>
+      //   <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+      //   <button onClick={() => this.scrollBox.scrollToBottom()}>
+      //     맨 밑으로
+      //   </button>
+      // </div>
+
+      // 6.2.2
+      <IterationSample />
     );
   }
 }
