@@ -6,10 +6,12 @@ import Say from "./3.Say";
 import EventPractice from "./4.EventPractice";
 import ValidationSample from "./5.ValidationSample";
 import ScrollBox from "./6.ScrollBox";
-import { Component } from "react";
+import { Component, useState } from "react";
 import IterationSample from "./7.IterationSample";
 import LifeCycleSample from "./8.LifeCycleSample";
 import ErrorBoundary from "./9.ErrorBoundary";
+import Counter2 from "./10.Counter(useState)";
+import Info from "./11.Info";
 // 모듈 불러오기(import)
 
 // const App = () => {
@@ -56,31 +58,52 @@ import ErrorBoundary from "./9.ErrorBoundary";
 // }
 
 // 7.3.2 App 컴포넌트에서 예제 컴포넌트 사용
-function getRandomColor() {
-  return '#' + Math.floor(Math.random() * 16777215).toString(16);
-}
+// function getRandomColor() {
+//   return '#' + Math.floor(Math.random() * 16777215).toString(16);
+// }
 
-class App extends Component {
-  state = {
-    color: '#000000'
-  }
+// class App extends Component {
+//   state = {
+//     color: '#000000'
+//   }
 
-  handleClick = () => {
-    this.setState({
-      color: getRandomColor()
-    })
-  }
+//   handleClick = () => {
+//     this.setState({
+//       color: getRandomColor()
+//     })
+//   }
 
-  render() {
-    return(
-      <div>
-        <button onClick={this.handleClick}>랜덤 색상</button>
-        <ErrorBoundary>
-          <LifeCycleSample color={this.state.color} />
-        </ErrorBoundary>
-      </div>
-    )
-  }
+//   render() {
+//     return(
+//       <div>
+//         <button onClick={this.handleClick}>랜덤 색상</button>
+//         <ErrorBoundary>
+//           <LifeCycleSample color={this.state.color} />
+//         </ErrorBoundary>
+//       </div>
+//     )
+//   }
+// }
+
+
+const App = () => {
+  // return <Counter2 />
+  // return <Info />
+
+  // 8.2.3 뒷정리하기
+  const [visible, setVisible] = useState(false);
+  return (
+    <div>
+      <button 
+        onClick={() => {
+          setVisible(!visible);
+        }}>
+        {visible ? '숨기기' : '보이기'}
+      </button>
+      <hr />
+      {visible && <Info />}
+    </div>
+  )
 }
 
 export default App;
