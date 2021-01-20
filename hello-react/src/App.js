@@ -8,6 +8,8 @@ import ValidationSample from "./5.ValidationSample";
 import ScrollBox from "./6.ScrollBox";
 import { Component } from "react";
 import IterationSample from "./7.IterationSample";
+import LifeCycleSample from "./8.LifeCycleSample";
+import ErrorBoundary from "./9.ErrorBoundary";
 // 모듈 불러오기(import)
 
 // const App = () => {
@@ -36,20 +38,48 @@ import IterationSample from "./7.IterationSample";
 
 // };
 
-class App extends Component {
-  render() {
-    return (
-        // 5.3.2.2 App 컴포넌트에서 스크롤 박스 컴포넌트 렌더링
-      // <div>
-      //   <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
-      //   <button onClick={() => this.scrollBox.scrollToBottom()}>
-      //     맨 밑으로
-      //   </button>
-      // </div>
+// class App extends Component {
+//   render() {
+//     return (
+//         // 5.3.2.2 App 컴포넌트에서 스크롤 박스 컴포넌트 렌더링
+//       // <div>
+//       //   <ScrollBox ref={(ref) => (this.scrollBox = ref)} />
+//       //   <button onClick={() => this.scrollBox.scrollToBottom()}>
+//       //     맨 밑으로
+//       //   </button>
+//       // </div>
 
-      // 6.2.2
-      <IterationSample />
-    );
+//       // 6.2.2
+//       <IterationSample />
+//     );
+//   }
+// }
+
+// 7.3.2 App 컴포넌트에서 예제 컴포넌트 사용
+function getRandomColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
+
+class App extends Component {
+  state = {
+    color: '#000000'
+  }
+
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor()
+    })
+  }
+
+  render() {
+    return(
+      <div>
+        <button onClick={this.handleClick}>랜덤 색상</button>
+        <ErrorBoundary>
+          <LifeCycleSample color={this.state.color} />
+        </ErrorBoundary>
+      </div>
+    )
   }
 }
 
