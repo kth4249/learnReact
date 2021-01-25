@@ -1,0 +1,47 @@
+// 9.2 Sass 사용하기
+
+// 9.2.1 utils 함수 분리하기
+@import './styles/utils.scss';
+
+.SassComponent {
+    display: flex;
+    .box {
+        background: red;
+        cursor: pointer;
+        transition: all 0.3s ease-in;
+        &.red {
+            // .red 클래스가 .box와 함께 사용되었을 때
+            background: $red;
+            @include squre(1);
+        }
+        &.orange {
+            background: $orange;
+            @include squre(2);
+        }
+        &.yellow {
+            background: $yellow;
+            @include squre(3);
+        }
+        &.green {
+            background: $green;
+            @include squre(4);
+        }
+        &.blue {
+            background: $blue;
+            @include squre(5);
+        }
+        &.indigo {
+            background: $indigo;
+            @include squre(6);
+        }
+        &.violet {
+            background: $violet;
+            @include squre(7);
+        }
+
+        &:hover {
+            // .box에 마우스를 올렸을 때
+            background: black;
+        }
+    }
+}
