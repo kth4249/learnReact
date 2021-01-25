@@ -12,6 +12,8 @@ import LifeCycleSample from "./8.LifeCycleSample";
 import ErrorBoundary from "./9.ErrorBoundary";
 import Counter2 from "./10.Counter(useState)";
 import Info from "./11.Info";
+import Counter3 from './12.Counter(useReducer)';
+import Info2 from "./13.Info(useReducer)";
 // 모듈 불러오기(import)
 
 // const App = () => {
@@ -91,19 +93,21 @@ const App = () => {
   // return <Info />
 
   // 8.2.3 뒷정리하기
-  const [visible, setVisible] = useState(false);
-  return (
-    <div>
-      <button 
-        onClick={() => {
-          setVisible(!visible);
-        }}>
-        {visible ? '숨기기' : '보이기'}
-      </button>
-      <hr />
-      {visible && <Info />}
-    </div>
-  )
+  // const [visible, setVisible] = useState(false);
+  // return (
+  //   <div>
+  //     <button 
+  //       onClick={() => {
+  //         setVisible(!visible);
+  //       }}>
+  //       {visible ? '숨기기' : '보이기'}
+  //     </button>
+  //     <hr />
+  //     {visible && <Info />}
+  //   </div>
+  // )
+  // return <Counter3 />
+  return <Info2 />
 }
 
 export default App;
