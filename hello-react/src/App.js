@@ -14,6 +14,7 @@ import Counter2 from "./10.Counter(useState)";
 import Info from "./11.Info";
 import Counter3 from './12.Counter(useReducer)';
 import Info2 from "./13.Info(useReducer)";
+import Average from "./14.Average";
 // 모듈 불러오기(import)
 
 // const App = () => {
@@ -106,8 +107,10 @@ const App = () => {
   //     {visible && <Info />}
   //   </div>
   // )
+  
   // return <Counter3 />
-  return <Info2 />
+  // return <Info2 />
+  return <Average />
 }
 
 export default App;
