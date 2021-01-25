@@ -1,0 +1,17 @@
+import { useReducer } from 'react'
+
+// 8.7 커스텀 Hooks 만들기
+function reducer(state, action) {
+    return {
+        ...state,
+        [action.name]: action.value
+    };
+}
+
+export default function useInputs(initialForm) {
+    const [state, dispatch] = useReducer(reducer, initialForm);
+    const onChange = e => {
+        dispatch(e.target);
+    }
+    return [state, onChange];
+}

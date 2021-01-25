@@ -107,10 +107,10 @@ const App = () => {
   //     {visible && <Info />}
   //   </div>
   // )
-  
+
   // return <Counter3 />
-  // return <Info2 />
-  return <Average />
+  return <Info2 />
+  // return <Average />
 }
 
 export default App;
