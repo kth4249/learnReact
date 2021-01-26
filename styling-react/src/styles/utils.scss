@@ -1,3 +1,7 @@
+// 9.2.3 node_modules에서 라이브러리 불러오기
+@import "~include-media/dist/include-media";
+@import "~open-color/open-color";
+
 // 9.2.1 utils 함수 분리하기
 $red: #fa5252;
 $orange: #fd7e14;
@@ -9,7 +13,7 @@ $violet: #7950f2;
 
 // 믹스인 만들기(재사용되는 스타일 블록을 함수처럼 사용할 수 있음)
 @mixin squre($size) {
-    $calculated: 32px * $size;
-    width: $calculated;
-    height: $calculated;
+  $calculated: 32px * $size;
+  width: $calculated;
+  height: $calculated;
 }
