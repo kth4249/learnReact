@@ -1,10 +1,10 @@
 import "./App.css";
-import { Link, Route } from "react-router-dom";
+import { Link, Route, Switch } from "react-router-dom";
 import Home from "./1.Home";
 import About from "./2.About";
 import Profile from "./3.Profile";
 import Profiles from "./4.Profiles";
-import HistorySample from './5.HistorySample';
+import HistorySample from "./5.HistorySample";
 
 function App() {
   // return (
@@ -72,15 +72,25 @@ function App() {
         </li>
       </ul>
       <hr />
-      <Route path="/" component={Home} exact={true} />
-      <Route path={["/about", "/info"]} component={About} />
-      <Route path="/profiles" component={Profiles} />
-      <Route path="/history" component={HistorySample} />
+      {/* 13.6.3 Switch 
+      Switch 컴포넌트는 여러 Route를 감싸서 그 중 일치하는
+      단 하나의 라우트만을 렌더링시켜 줍니다. */}
+      <Switch>
+        <Route path="/" component={Home} exact={true} />
+        <Route path={["/about", "/info"]} component={About} />
+        <Route path="/profiles" component={Profiles} />
+        <Route path="/history" component={HistorySample} />
+        <Route 
+          render={({location}) => (
+            <div>
+              <h2>이 페이지는 존재하지 않습니다.</h2>
+              <p>{location.pathname}</p>
+            </div>
+          )}
+        />
+      </Switch>
     </div>
   );
-
-
-
 }
 
 export default App;
