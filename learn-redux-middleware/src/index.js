@@ -19,7 +19,9 @@ const logger = createLogger();
 
 // 18.2.2 redux-logger 사용하기
 // 18.3.1 redux-chunk
-const store = createStore(rootReducer, applyMiddleware(logger, ReduxThunk));
+const store = createStore(rootReducer,
+  applyMiddleware(logger, ReduxThunk)
+);
 
 
 ReactDOM.render(
