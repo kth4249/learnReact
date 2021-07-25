@@ -19,7 +19,7 @@ const App = () => {
         })
       );
     },
-    [form]
+    []
   );
 
   const onSubmit = useCallback(
@@ -60,7 +60,7 @@ const App = () => {
         })
       );
     },
-    [data]
+    []
   );
 
   return (
