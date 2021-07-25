@@ -14,7 +14,7 @@ const App = () => {
     (e) => {
       const { name, value } = e.target;
       setForm(
-        produce(form, (draft) => {
+        produce((draft) => {
           draft[name] = value;
         })
       );
@@ -33,7 +33,7 @@ const App = () => {
 
       // array에 새 항목 등록
       setData(
-        produce(data, (draft) => {
+        produce((draft) => {
           draft.array.push(info);
         })
       );
@@ -52,7 +52,7 @@ const App = () => {
   const onRemove = useCallback(
     (id) => {
       setData(
-        produce(data, (draft) => {
+        produce((draft) => {
           draft.array.splice(
             draft.array.findIndex((info) => info.id === id),
             1
