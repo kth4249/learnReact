@@ -22,7 +22,7 @@ module.exports = {
     publicPath: paths.publicUrlOrPath, // 정적 파일이 제공될 경로
   },
   module: {
-    rule: [
+    rules: [
       {
         oneOf: [
           // 자바스크립트를 위한 처리
@@ -158,4 +158,8 @@ module.exports = {
       allowlist: [/@babel/],
     }),
   ],
+  // externals: [nodeExternals()],
+  // plugins: [
+  //   new webpack.DefinePlugin(env.stringified), // 환경변수를 주입해줍니다.
+  // ],
 };
